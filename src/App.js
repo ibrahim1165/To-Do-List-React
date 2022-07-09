@@ -1,11 +1,12 @@
 
 import './App.css';
 import Home from './Pages/Home';
+import Navbar from './Pages/Shard/Navbar';
 
 function App() {
   return (
     <div>
-    <Home />
+      <Navbar />
     </div>
   );
 }
