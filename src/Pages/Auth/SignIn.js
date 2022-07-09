@@ -6,7 +6,7 @@ import {
     useSignInWithEmailAndPassword,
     useSignInWithGoogle,
   } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase.init";
+import auth from '../../firebase.init';
 const SignIn = () => {
     const {
         register,

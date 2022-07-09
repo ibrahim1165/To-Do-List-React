@@ -8,7 +8,7 @@ const Completed = () => {
     const email = user?.email;
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
-      fetch(`https://enigmatic-caverns-77732.herokuapp.com/completed?email=${email}`)
+      fetch(`https://quiet-everglades-32387.herokuapp.com/completed?email=${email}`)
         .then((res) => res.json())
         .then((data) => setTasks(data));
     }, [email, tasks]);

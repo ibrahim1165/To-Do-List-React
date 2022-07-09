@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import "./pages.css"
 import { useEffect } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase.init";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
+import auth from '../firebase.init';
 const AddNewTask = () => {
     const [user, loading, error] = useAuthState(auth);
     const [date, setDate] = useState(new Date());
@@ -15,7 +15,6 @@ const AddNewTask = () => {
     const [task, setTask] = useState("");
     const [category, setCategory] = useState("");
     const [time, setTime] = useState("");
-
     const email = user?.email;
     const allData = {
         task,
@@ -28,7 +27,7 @@ const AddNewTask = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email && task && category && time && newDate) {
-            fetch(`http://localhost:5000/task`, {
+            fetch(`https://quiet-everglades-32387.herokuapp.com/tasks`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -49,7 +48,7 @@ const AddNewTask = () => {
             if (event.key === "Enter") {
                 event.preventDefault();
                 if (email && task && category && time && date) {
-                    fetch(`http://localhost:5000/task`, {
+                    fetch(`https://quiet-everglades-32387.herokuapp.com/tasks`, {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

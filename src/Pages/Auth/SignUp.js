@@ -7,7 +7,7 @@ import {
     useSignInWithGoogle,
     useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase.init";
+import auth from '../../firebase.init';
 const SignUp = () => {
     const {
         register,
