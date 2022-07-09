@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import "./pages.css"
 import { useEffect } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "./firebase.init";
+import { auth } from "../firebase.init";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
